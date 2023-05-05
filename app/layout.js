@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import './globals.css'
 
 export const metadata = {
@@ -8,7 +9,25 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <>
+        <div className='flex justify-around items-center text-gray-500 text-lg min-h-creen border-b-2 h-16'>
+        <div>
+        <Link href="/" className='mr-3 text-3xl'>봡챠</Link>
+        <Link href="/main" className='mr-3 text-black'>영화</Link>
+        <Link href="/tv" className='mr-3'>TV</Link>
+        <Link href="/" className='mr-3'>책</Link>
+        <Link href="/" className='mr-3'>웹툰</Link>
+        </div>
+        <div className=' '>
+        <input className='bg-gray-200 w-80 h-10 text-center mr-3' type='text' 
+        placeholder='콘텐츠, 인물, 컬렉션, 유저를 검색해보세요. '></input>
+        <Link href="/login" className='mr-3'>로그인</Link>
+        <Link href="/join" className='mr-3 border border-black rounded-lg text-black py-1 px-2'>회원가입</Link>
+        </div>
+        </div>
+        </>
+        {children}</body>
     </html>
   )
 }
